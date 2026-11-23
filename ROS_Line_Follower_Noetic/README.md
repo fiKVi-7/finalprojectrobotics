@@ -14,6 +14,15 @@ Use `bash noetic/run.sh demo gui` to keep the Gazebo window open after the robot
 
 Noetic writes results to `evidence/noetic-verify-*/`. A Noetic run on Ubuntu 20.04.6 with Gazebo Classic 11.15.1 passed all three checks (straight tracking, turns and line-loss stop); see the results and the comparison with ROS 2 Humble in [ROS_Line_Follower_Comparison_Report.docx](../ROS_Line_Follower_Comparison_Report.docx), and the demo videos [ros 1 part 1.mp4](ros%201%20part%201.mp4) and [ros 1 part 2.mp4](ros%201%20part%202.mp4). Noetic and Gazebo Classic are end of life and are used here for the requested ROS 1 run.
 
+### Screenshots (ROS 1 Noetic, Gazebo Classic 11)
+
+Frames taken from [ros 1 part 1.mp4](ros%201%20part%201.mp4): the robot starts on the straight section, follows the
+bend, and stops after the line ends.
+
+![ROS 1 Noetic run: start, bend and stop](screenshots/ros1_noetic_sequence.png)
+
+![ROS 1 Noetic run in Gazebo Classic 11](screenshots/ros1_noetic_gazebo_classic.png)
+
 ## First run with ROS 2 Humble on Windows
 
 Open regular Windows PowerShell in this project folder. If using the ZIP, extract it first and open PowerShell in the extracted folder containing `setup.sh`.

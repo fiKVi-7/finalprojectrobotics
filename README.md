@@ -63,6 +63,11 @@ best configuration base_speed 0.45 m/s, kp = 3, kd = 0 with a lap time of 32.47 
 - **Videos:** [`ros 1 part 1.mp4`](ROS_Line_Follower_Noetic/ros%201%20part%201.mp4) ·
   [`ros 1 part 2.mp4`](ROS_Line_Follower_Noetic/ros%201%20part%202.mp4)
 - **Results and comparison with ROS 2:** [`ROS_Line_Follower_Comparison_Report.docx`](ROS_Line_Follower_Comparison_Report.docx)
+- **Screenshots:** [`screenshots/`](ROS_Line_Follower_Noetic/screenshots/) (frames taken from `ros 1 part 1.mp4`)
+
+![ROS 1 Noetic run: start, bend and stop](ROS_Line_Follower_Noetic/screenshots/ros1_noetic_sequence.png)
+
+![ROS 1 Noetic run in Gazebo Classic 11](ROS_Line_Follower_Noetic/screenshots/ros1_noetic_gazebo_classic.png)
 
 The robot follows a straight section and bends with a downward camera and a proportional controller, and stops
 when the line ends. Gazebo ROS plugins publish `/camera/image` and `/odom` and receive `/cmd_vel`.
