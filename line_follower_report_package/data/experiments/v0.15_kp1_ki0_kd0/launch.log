@@ -1,0 +1,69 @@
+[INFO] [launch]: All log files can be found below /home/rofuy/.ros/log/2026-11-22-07-18-15-751950-cobayuk-76387
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ign gazebo-1]: process started with pid [76388]
+[INFO] [create-2]: process started with pid [76390]
+[INFO] [parameter_bridge-3]: process started with pid [76393]
+[INFO] [ir_sensor_node-4]: process started with pid [76395]
+[INFO] [line_follower_node-5]: process started with pid [76397]
+[INFO] [lap_logger_node-6]: process started with pid [76399]
+[parameter_bridge-3] [INFO] [1795331895.876446239] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (ignition.msgs.Twist)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1795331895.877228099] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (ignition.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1795331895.877789326] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/ground_truth (ignition.msgs.Odometry) -> /ground_truth (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1795331895.878070127] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/ir_camera/image (ignition.msgs.Image) -> /ir_camera/image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1795331895.878593644] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (ignition.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[line_follower_node-5] [INFO] [1795331895.977137642] [line_follower_node]: line_follower_node started
+[ir_sensor_node-4] [INFO] [1795331895.979399926] [ir_sensor_node]: ir_sensor_node started, waiting for /ir_camera/image ...
+[lap_logger_node-6] [INFO] [1795331895.989533848] [lap_logger_node]: Logging to /home/rofuy/line_follower_ws/logs/experiments/v0.15_kp1_ki0_kd0/run_20261122_071815.csv
+[create-2] [INFO] [1795331896.174000131] [ros_gz_sim]: Requested creation of entity.
+[create-2] [INFO] [1795331896.174102676] [ros_gz_sim]: OK creation of entity.
+[INFO] [create-2]: process has finished cleanly [pid 76390]
+[ign gazebo-1] libEGL warning: Not allowed to force software rendering when API explicitly selects a hardware device.
+[ign gazebo-1] libEGL warning: pci id for fd 34: 1ab8:0010, driver (null)
+[ign gazebo-1] 
+[ign gazebo-1] pci id for fd 35: 1ab8:0010, driver (null)
+[ir_sensor_node-4] [INFO] [1795331898.288826028] [ir_sensor_node]: 5 sensors, spacing 1.5 cm, camera sees 8.0 cm -> pixel columns [5, 12, 20, 27, 34] of 40
+[parameter_bridge-3] [INFO] [1795331898.289716891] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[lap_logger_node-6] [INFO] [1795331898.319195667] [lap_logger_node]: Robot started moving, lap timer running (lap source: ground_truth)
+[lap_logger_node-6] [INFO] [1795331993.833766037] [lap_logger_node]: LAP 1 finished: 95.30 s (sim time), 13.34 m (ground_truth)
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [lap_logger_node-6]: sending signal 'SIGINT' to process[lap_logger_node-6]
+[INFO] [line_follower_node-5]: sending signal 'SIGINT' to process[line_follower_node-5]
+[INFO] [ir_sensor_node-4]: sending signal 'SIGINT' to process[ir_sensor_node-4]
+[INFO] [parameter_bridge-3]: sending signal 'SIGINT' to process[parameter_bridge-3]
+[INFO] [ign gazebo-1]: sending signal 'SIGINT' to process[ign gazebo-1]
+[parameter_bridge-3] [INFO] [1795331995.751544876] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lap_logger_node-6] Traceback (most recent call last):
+[lap_logger_node-6]   File "/home/rofuy/line_follower_ws/install/line_follower/lib/line_follower/lap_logger_node", line 33, in <module>
+[lap_logger_node-6]     sys.exit(load_entry_point('line-follower', 'console_scripts', 'lap_logger_node')())
+[lap_logger_node-6]   File "/home/rofuy/line_follower_ws/build/line_follower/line_follower/lap_logger_node.py", line 126, in main
+[lap_logger_node-6]     node.destroy_node()
+[lap_logger_node-6]   File "/home/rofuy/line_follower_ws/build/line_follower/line_follower/lap_logger_node.py", line 115, in destroy_node
+[lap_logger_node-6]     super().destroy_node()
+[lap_logger_node-6]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1691, in destroy_node
+[lap_logger_node-6]     self.destroy_service(self._services[0])
+[lap_logger_node-6]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1615, in destroy_service
+[lap_logger_node-6]     service.destroy()
+[lap_logger_node-6]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/service.py", line 93, in destroy
+[lap_logger_node-6]     self.__service.destroy_when_not_in_use()
+[lap_logger_node-6] KeyboardInterrupt
+[ir_sensor_node-4] Traceback (most recent call last):
+[ir_sensor_node-4]   File "/home/rofuy/line_follower_ws/install/line_follower/lib/line_follower/ir_sensor_node", line 33, in <module>
+[line_follower_node-5] Traceback (most recent call last):
+[line_follower_node-5]   File "/home/rofuy/line_follower_ws/install/line_follower/lib/line_follower/line_follower_node", line 33, in <module>
+[ir_sensor_node-4]     sys.exit(load_entry_point('line-follower', 'console_scripts', 'ir_sensor_node')())
+[ir_sensor_node-4]   File "/home/rofuy/line_follower_ws/build/line_follower/line_follower/ir_sensor_node.py", line 102, in main
+[line_follower_node-5]     sys.exit(load_entry_point('line-follower', 'console_scripts', 'line_follower_node')())
+[line_follower_node-5]   File "/home/rofuy/line_follower_ws/build/line_follower/line_follower/line_follower_node.py", line 133, in main
+[ir_sensor_node-4]     node.destroy_node()
+[ir_sensor_node-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1696, in destroy_node
+[line_follower_node-5]     node.destroy_node()
+[line_follower_node-5]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1696, in destroy_node
+[ir_sensor_node-4]     self.__node.destroy_when_not_in_use()
+[ir_sensor_node-4] KeyboardInterrupt
+[line_follower_node-5]     self.__node.destroy_when_not_in_use()
+[line_follower_node-5] KeyboardInterrupt
+[ERROR] [ir_sensor_node-4]: process has died [pid 76395, exit code -2, cmd '/home/rofuy/line_follower_ws/install/line_follower/lib/line_follower/ir_sensor_node --ros-args --params-file /tmp/launch_params_36zbsttb'].
+[ERROR] [line_follower_node-5]: process has died [pid 76397, exit code -2, cmd '/home/rofuy/line_follower_ws/install/line_follower/lib/line_follower/line_follower_node --ros-args --params-file /home/rofuy/line_follower_ws/logs/experiments/v0.15_kp1_ki0_kd0/params.yaml --params-file /tmp/launch_params_l88fjflb'].
+[ERROR] [lap_logger_node-6]: process has died [pid 76399, exit code -2, cmd '/home/rofuy/line_follower_ws/install/line_follower/lib/line_follower/lap_logger_node --ros-args --params-file /home/rofuy/line_follower_ws/logs/experiments/v0.15_kp1_ki0_kd0/params.yaml --params-file /tmp/launch_params_diaraalp'].
+[ERROR] [ign gazebo-1]: process has died [pid 76388, exit code -2, cmd 'ruby /usr/bin/ign gazebo -r -s --render-engine ogre2 /home/rofuy/line_follower_ws/install/line_follower/share/line_follower/worlds/line_track.sdf --force-version 6'].
+[ERROR] [parameter_bridge-3]: process has died [pid 76393, exit code -11, cmd '/opt/ros/humble/lib/ros_gz_bridge/parameter_bridge /cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist /odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry /ground_truth@nav_msgs/msg/Odometry[ignition.msgs.Odometry /ir_camera/image@sensor_msgs/msg/Image[ignition.msgs.Image /clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock --ros-args'].

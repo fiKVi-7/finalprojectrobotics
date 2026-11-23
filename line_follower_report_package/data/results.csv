@@ -1,0 +1,6 @@
+run,base_speed,kp,ki,kd,completed,lap_time_s,mean_abs_error,max_abs_error,line_lost_count,mean_linear_speed,max_deviation_m,direction,lap_distance_m,pose_source,mean_error_in_curves,steering_sign_flips,wall_time_s,csv_file
+v0.15_kp1_ki0_kd0,0.15,1.0,0.0,0.0,1,95.30,0.0662,0.1296,0,0.1401,0.0086,ccw,13.34,ground_truth,0.1112,0,100,logs/experiments/v0.15_kp1_ki0_kd0/run_20261122_071815.csv
+v0.25_kp1_ki0_kd0,0.25,1.0,0.0,0.0,1,59.87,0.1048,0.2200,0,0.2238,0.0077,ccw,13.35,ground_truth,0.1722,0,64,logs/experiments/v0.25_kp1_ki0_kd0/run_20261122_071957.csv
+v0.35_kp1_ki0_kd0,0.35,1.0,0.0,0.0,1,44.71,0.1411,0.2500,0,0.3006,0.0072,ccw,13.35,ground_truth,0.2253,0,48,logs/experiments/v0.35_kp1_ki0_kd0/run_20261122_072102.csv
+v0.45_kp1_ki0_kd0,0.45,1.0,0.0,0.0,1,36.31,0.1735,0.3333,0,0.3719,0.0059,ccw,13.40,ground_truth,0.2722,0,40,logs/experiments/v0.45_kp1_ki0_kd0/run_20261122_072451.csv
+v0.45_kp3_ki0_kd0,0.45,3.0,0.0,0.0,1,32.47,0.0776,0.1923,0,0.4151,0.0086,ccw,13.35,ground_truth,0.1142,14,36,logs/experiments/v0.45_kp3_ki0_kd0/run_20261122_072531.csv

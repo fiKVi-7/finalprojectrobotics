@@ -1,0 +1,12 @@
+# Original archives (contents are committed unzipped)
+*.zip
+
+# Python / ROS build output
+__pycache__/
+*.pyc
+build/
+install/
+log/
+
+# Local run output
+logs/

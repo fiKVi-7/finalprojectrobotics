@@ -1,0 +1,21 @@
+// Hardware block diagram (proposal) - render: dot -Tpng hardware.dot -o ../figures/diagram_hardware.png
+digraph hardware {
+  rankdir=LR; dpi=150; bgcolor="#fcfcfb"; pad=0.2; nodesep=0.35; ranksep=0.55;
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#9b9a95", fontname="DejaVu Sans", fontsize=11, fontcolor="#0b0b0b", margin="0.15,0.08"];
+  edge [color="#52514e", fontname="DejaVu Sans", fontsize=9, fontcolor="#52514e", arrowsize=0.7];
+  BAT [label="2S battery\n7.4 V"];
+  REG [label="5 V\nregulator"];
+  SENS [label="Sensor array\n5 × TCRT5000", fillcolor="#dbe9fa", color="#2a78d6"];
+  MCU [label="Microcontroller\nArduino Nano / ESP32\n(ADC + PID line follower)", fillcolor="#dbe9fa", color="#2a78d6"];
+  DRV [label="Motor driver\nTB6612FNG"];
+  ML [label="Left DC motor\n+ encoder"];
+  MR [label="Right DC motor\n+ encoder"];
+  PC [label="PC / Raspberry Pi\nROS 2 (optional)", style="rounded,dashed", fillcolor="#ffffff"];
+  BAT -> REG; BAT -> DRV [label="motor power"];
+  REG -> MCU; REG -> SENS;
+  SENS -> MCU [label="5 analog signals\n(to ADC)"];
+  MCU -> DRV [label="PWM + direction"];
+  DRV -> ML; DRV -> MR;
+  ML -> MCU [label="encoder", style=dashed]; MR -> MCU [label="encoder", style=dashed];
+  MCU -> PC [dir=both, style=dashed, label="micro-ROS /\nserial"];
+}

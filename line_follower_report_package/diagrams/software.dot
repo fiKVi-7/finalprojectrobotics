@@ -1,0 +1,23 @@
+// ROS 2 software architecture - render: dot -Tpng software.dot -o ../figures/diagram_software.png
+digraph software {
+  rankdir=LR; dpi=150; bgcolor="#fcfcfb"; pad=0.2; nodesep=0.3; ranksep=0.6; compound=true;
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#9b9a95", fontname="DejaVu Sans", fontsize=11, fontcolor="#0b0b0b", margin="0.15,0.08"];
+  edge [color="#52514e", fontname="DejaVu Mono", fontsize=9, fontcolor="#52514e", arrowsize=0.7];
+  subgraph cluster_gz { label="Gazebo Fortress"; fontname="DejaVu Sans"; fontsize=11; color="#9b9a95"; style="rounded,dashed";
+    CAM [label="Camera 40×4 px\n(virtual IR sensor)"];
+    DD [label="Plugin DiffDrive"];
+    GT [label="Plugin OdometryPublisher\n(ground truth)"];
+  }
+  BR [label="ros_gz_bridge\nparameter_bridge", fillcolor="#eeeeec"];
+  IR [label="ir_sensor_node", fillcolor="#dbe9fa", color="#2a78d6"];
+  LF [label="line_follower_node\n(PID)", fillcolor="#dbe9fa", color="#2a78d6"];
+  LOG [label="lap_logger_node", fillcolor="#dbe9fa", color="#2a78d6"];
+  CSV [label="CSV files\nin logs/", shape=cylinder];
+  CAM -> BR [label="image"]; DD -> BR [dir=both, label="odom →\n← cmd_vel"]; GT -> BR [label="ground_truth"];
+  BR -> IR [label="/ir_camera/image"];
+  IR -> LF [label="/ir_sensors"];
+  LF -> BR [label="/cmd_vel"];
+  LF -> LOG [label="/line_error, /cmd_vel"];
+  BR -> LOG [label="/odom, /ground_truth"];
+  LOG -> CSV;
+}

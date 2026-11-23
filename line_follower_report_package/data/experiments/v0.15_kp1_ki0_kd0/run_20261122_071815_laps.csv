@@ -1,0 +1,2 @@
+lap,start_time,end_time,lap_time,distance,source
+1,0.000,95.302,95.302,13.341,ground_truth

@@ -1,0 +1,18 @@
+line_follower_node:
+  ros__parameters:
+    kp: 1.0
+    ki: 0.0
+    kd: 0.0
+    base_speed: 0.45
+    min_speed: 0.05
+    max_angular: 2.0
+    search_speed: 1.0
+    line_threshold: 0.4
+    integral_limit: 1.0
+    sensor_timeout: 0.5
+lap_logger_node:
+  ros__parameters:
+    log_dir: "/home/rofuy/line_follower_ws/logs/experiments/v0.45_kp1_ki0_kd0"
+    log_rate: 10.0
+    lap_radius: 0.15
+    min_lap_distance: 5.0
