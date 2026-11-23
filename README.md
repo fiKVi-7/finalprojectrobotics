@@ -35,6 +35,10 @@ Demo videos of the ROS 1 run: [`ros 1 part 1.mp4`](ROS_Line_Follower_Noetic/ros%
 
 ## Main project at a glance
 
+The project has a ROS 2 part and a ROS 1 part.
+
+### ROS 2 Humble — IR line follower (Gazebo Fortress)
+
 - **Report:** [`report.pdf`](line_follower_report_package/report.pdf) ·
   [`report.docx`](line_follower_report_package/report.docx) ·
   [`report.md`](line_follower_report_package/report.md)
@@ -49,7 +53,27 @@ Demo videos of the ROS 1 run: [`ros 1 part 1.mp4`](ROS_Line_Follower_Noetic/ros%
 Result summary (from `data/results.csv`, simulation time): all 5 runs finished a full lap without losing the line;
 best configuration base_speed 0.45 m/s, kp = 3, kd = 0 with a lap time of 32.47 s.
 
-## Running the main project
+### ROS 1 Noetic — camera line follower (Gazebo Classic 11)
+
+- **Description and instructions:** [`ROS_Line_Follower_Noetic/README.md`](ROS_Line_Follower_Noetic/README.md)
+- **Source code:** [`noetic/`](ROS_Line_Follower_Noetic/noetic/) — ROS 1 package `line_follower_noetic`:
+  controller node ([`node.py`](ROS_Line_Follower_Noetic/noetic/node.py)), world generator
+  ([`make_world.py`](ROS_Line_Follower_Noetic/noetic/make_world.py)), launch file
+  ([`simulation.launch`](ROS_Line_Follower_Noetic/noetic/simulation.launch)), setup and run scripts
+- **Videos:** [`ros 1 part 1.mp4`](ROS_Line_Follower_Noetic/ros%201%20part%201.mp4) ·
+  [`ros 1 part 2.mp4`](ROS_Line_Follower_Noetic/ros%201%20part%202.mp4)
+- **Results and comparison with ROS 2:** [`ROS_Line_Follower_Comparison_Report.docx`](ROS_Line_Follower_Comparison_Report.docx)
+
+The robot follows a straight section and bends with a downward camera and a proportional controller, and stops
+when the line ends. Gazebo ROS plugins publish `/camera/image` and `/odom` and receive `/cmd_vel`.
+
+Result summary (from the comparison report): the ROS 1 Noetic run passed all three checks (straight tracking,
+turning and line-loss stop). Straight RMS error 2.98 mm, turns RMS error 37.23 mm (peak 63.15 mm), final forward
+position 5.764 m, qualifying stop 1.02 s.
+
+## Running the project
+
+### ROS 2 Humble part
 
 Ubuntu 22.04 with ROS 2 Humble and Gazebo Fortress (`ros-humble-ros-gz`):
 
@@ -66,6 +90,19 @@ In a virtual machine the launch file renders on the CPU by default (`software_gl
 add `software_gl:=false`. See the package [README](line_follower_report_package/code/line_follower/README.md) for
 details.
 
-## Running the Noetic variant
+### ROS 1 Noetic part
 
-See [`ROS_Line_Follower_Noetic/README.md`](ROS_Line_Follower_Noetic/README.md).
+Ubuntu 20.04 (e.g. WSL `Ubuntu-20.04`) with ROS 1 Noetic and Gazebo Classic 11, from the
+`ROS_Line_Follower_Noetic` folder:
+
+```bash
+cd ROS_Line_Follower_Noetic
+bash noetic/setup.sh                 # installs ROS Noetic + Gazebo 11 (once)
+bash noetic/run.sh verify auto       # sets up the package and world, runs, and checks straight
+                                     # tracking, turns and the line-loss stop
+bash noetic/run.sh demo gui          # keep the Gazebo window open after the robot stops
+```
+
+The launcher uses software rendering by default. See
+[`ROS_Line_Follower_Noetic/README.md`](ROS_Line_Follower_Noetic/README.md) for details, including the ROS 2 Humble
+launcher of this variant for Windows/WSL.
