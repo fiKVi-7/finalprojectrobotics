@@ -11,6 +11,9 @@ line sensing in ROS and Gazebo.
 | Alfatih Zaidan Rafif | 25/569893/PA/24020 |
 | Rofi Kasyidi Darmanto | 25/558667/PA/23476 |
 
+**Course:** Robotics
+**Lecturer:** Dr. Bakhtiar Alldino Ardi Sumbodo, S.Si., M.Cs.
+
 ## Contents
 
 | Path | What it is | ROS / simulator |

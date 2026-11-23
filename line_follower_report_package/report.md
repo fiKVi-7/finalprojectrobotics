@@ -2,7 +2,15 @@
 
 **Simulated in ROS 2 Humble + Gazebo Fortress**
 
-> **[TO BE FILLED IN BY THE GROUP]** Group name · Members and student IDs · Course · Lecturer · Date
+**Course:** Robotics
+
+**Lecturer:** Dr. Bakhtiar Alldino Ardi Sumbodo, S.Si., M.Cs.
+
+| Group member | Student ID |
+|---|---|
+| Fariz Marsal Musyaffa | 25/555145/PA/23267 |
+| Alfatih Zaidan Rafif | 25/569893/PA/24020 |
+| Rofi Kasyidi Darmanto | 25/558667/PA/23476 |
 
 ---
 
@@ -399,7 +407,7 @@ simulations running at the same time interfere with each other.
 
 | Section | What to fill in |
 |---|---|
-| Title block (top) | group name, members and student IDs, course, lecturer, date |
+| Title block (top) | members, course and lecturer are filled in; add a group name and submission date if required |
 | §3 Hardware | if the lecturer asks: component prices/availability, or a full circuit schematic |
 | Task division | if required: who did what |
 | Conclusion / reflection | if the campus format requires it: the group's own opinion |

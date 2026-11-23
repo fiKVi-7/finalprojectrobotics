@@ -27,7 +27,7 @@ Project: line follower robot with IR sensors, simulated in ROS 2 Humble + Gazebo
 
 ## 2. Checklist: what the group still has to do
 
-- [ ] **Title block**: group name, members + student IDs, course, lecturer, date (top of the report).
+- [x] **Title block**: members + student IDs, course and lecturer are filled in (add a group name and date if required).
 - [ ] **Task division** (if your campus format asks for it): who did what.
 - [ ] **Conclusion / reflection** in your own words (if required). A factual conclusion is already in §11.
 - [ ] **Hardware section (§3)**: add prices or a circuit schematic only if your lecturer asks. Everything in §3 is a
