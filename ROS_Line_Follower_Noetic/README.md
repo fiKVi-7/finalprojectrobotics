@@ -12,7 +12,7 @@ bash noetic/setup.sh && bash noetic/run.sh verify auto
 
 Use `bash noetic/run.sh demo gui` to keep the Gazebo window open after the robot stops, or `bash noetic/run.sh verify headless` for verification in a virtual display. The launcher uses software rendering by default. The ROS 1 Gazebo plugins publish `/camera/image` and `/odom` and receive `/cmd_vel`. The Noetic and Humble versions share the track, controller math, and verification criteria.
 
-Noetic writes results to `evidence/noetic-verify-*/`. No live Noetic result has been verified yet. Noetic and Gazebo Classic are end of life and are used here for the requested ROS 1 run.
+Noetic writes results to `evidence/noetic-verify-*/`. A Noetic run on Ubuntu 20.04.6 with Gazebo Classic 11.15.1 passed all three checks (straight tracking, turns and line-loss stop); see the results and the comparison with ROS 2 Humble in [ROS_Line_Follower_Comparison_Report.docx](../ROS_Line_Follower_Comparison_Report.docx), and the demo videos [ros 1 part 1.mp4](ros%201%20part%201.mp4) and [ros 1 part 2.mp4](ros%201%20part%202.mp4). Noetic and Gazebo Classic are end of life and are used here for the requested ROS 1 run.
 
 ## First run with ROS 2 Humble on Windows
 
